@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15
+    container_name: sylva_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: sylva_user
+      POSTGRES_PASSWORD: sylva_password
+      POSTGRES_DB: sylva_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
